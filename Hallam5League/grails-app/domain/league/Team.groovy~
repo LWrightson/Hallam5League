@@ -1,0 +1,8 @@
+package leagues
+
+class Teams {
+   String teamNo
+   String teamName
+    static constraints = {
+    }
+}

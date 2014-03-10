@@ -1,0 +1,11 @@
+package league
+
+class Fixture {
+   
+   Team teamA
+   Team teamB
+   String Date/time
+   String pitchNo
+    static constraints = {
+    }
+}
