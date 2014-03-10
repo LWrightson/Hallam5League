@@ -15,7 +15,6 @@ hibernate {
 environments {
     development {
         dataSource {
-                    dataSource {
             dbCreate = "update"
             driverClassName = "com.mysql.jdbc.Driver"
             dialect=org.hibernate.dialect.MySQL5Dialect
@@ -24,7 +23,6 @@ environments {
             url = "jdbc:mysql://localhost/Hallam5League?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8"
             pooled = true
         }
-}
     }
     test {
         dataSource {
