@@ -3,7 +3,7 @@ package league
 class League {
 
    String leagueName
-   String leagueStartDate
+   Date leagueStartDate
    String noOfTeams
    String lengthOfLeague
     static constraints = {
