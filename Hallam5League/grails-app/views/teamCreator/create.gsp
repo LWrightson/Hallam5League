@@ -1,0 +1,20 @@
+<html>
+ <body>
+  <h1>Hello and welcome to the Create Team Page</h1>
+  <div><a href="index.gsp">Team Index</a></div>
+  <g:form action="create" method="POST">
+	<label>Team Name</label><input name="teamName" type="text"/><br>
+	<label>Team Description</label><input name="teamDescription" type="text"/><br>
+        <label>Number of Team Members</label><input name="teamMembers" type="text"/><br>
+	<label>Select the League this team will play in</label>
+	<g:select name="leagueName"
+          from="${league.League.list()}"
+          value="${leagueName}"
+          optionValue="leagueName"
+          optionKey="id" /><br>
+	<input type="submit"/>
+  </g:form>
+
+
+ </body>
+</html>

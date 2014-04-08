@@ -14,16 +14,11 @@ return result
 
     def create() {
       println(params);
-      // Add <input type="date" name="fred"/> to gsp
-      // params.date('fred','yyyy-MM-dd')
 
 	def b = new league.League(leagueName : params.leagueName, 
-                                  leagueStartDate : params.date('startDate','yyyy-MM-dd'),
-                                  noOfTeams : params.noOfTeams,
-				  lengthOfLeague : params.lengthOfLeague)
-
-
-	//def b = new league.League(leagueName : "The Shining", leagueStartDate : "Mon JUl 15 00:00:00 ICT 2013", noOfTeams : "10", lengthOfLeague : "5 weeks")
+                             leagueStartDate : params.date('startDate','yyyy-MM-dd'),
+                             noOfTeams : params.noOfTeams,
+		             lengthOfLeague : params.lengthOfLeague)
 	if ( b.save() ) {
           println("Saved OK");
         }
@@ -32,8 +27,6 @@ return result
             println("Error: ${error}");
           }
         }
-    	//def save = League.save('insert into league.League')
-        //Person person = new Person(leagueName: 'lega1')
-        //[ person:person ]
+
     }
 }

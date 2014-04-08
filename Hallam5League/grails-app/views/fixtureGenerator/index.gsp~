@@ -1,0 +1,30 @@
+<html>
+	<body>
+		<h1>Welcome to the Fixture page</h1>
+		
+		<table border="1" style="width:900px">
+			<tr>
+
+				<th>Home</th>
+				<th>Away</th>
+
+			</tr>
+			<g:each in="${r}" var="team">
+			<tr>
+				<td>${team.teamName?ID1}</td>
+				<td>${team.teamName?ID2}</td>
+			</tr>
+			<tr>
+				<td>${team.teamName?ID1}</td>
+				<td>${team.teamName?ID3}</td>
+			</tr>
+			<tr>
+				<td>${team.teamName?ID1}</td>
+				<td>${team.teamName?ID4}</td>
+			</tr>
+<!--etc-->
+			
+			</g:each>
+		</table>
+	</body>
+</html> 

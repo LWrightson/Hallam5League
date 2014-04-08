@@ -1,8 +1,13 @@
-package leagues
+package league
 
-class Teams {
-   String teamNo
+class Team {
+   
    String teamName
+   String teamDescription
+   String teamMembers
+   //String leagueName
+   League leagueName
+
     static constraints = {
     }
 }

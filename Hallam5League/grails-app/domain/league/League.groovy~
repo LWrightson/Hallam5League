@@ -6,6 +6,7 @@ class League {
    Date leagueStartDate
    String noOfTeams
    String lengthOfLeague
-    static constraints = {
-    }
+
+   static constraints = {
+   }
 }

@@ -19,8 +19,8 @@ return result
 
 	def b = new league.League(leagueName : params.leagueName, 
                                   leagueStartDate : params.date('startDate','yyyy-MM-dd'),
-                                  noOfTeams : "10",
-				  lengthOfLeague : "5 weeks")
+                                  noOfTeams : params.noOfTeams,
+				  lengthOfLeague : params.lengthOfLeague)
 
 
 	//def b = new league.League(leagueName : "The Shining", leagueStartDate : "Mon JUl 15 00:00:00 ICT 2013", noOfTeams : "10", lengthOfLeague : "5 weeks")

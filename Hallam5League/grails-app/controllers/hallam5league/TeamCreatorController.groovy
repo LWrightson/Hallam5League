@@ -1,0 +1,36 @@
+package hallam5league
+import league.*
+
+class TeamCreatorController {
+
+    def index() { 
+	def result = [:]
+      println("Index ${params}");
+	result.l = Team.findAll('from league.Team as l where l.teamName like ?',['%'])
+	
+
+
+return result
+    }
+
+
+    def create() {
+      println(params);
+	if(request.method=="POST"){
+	def b = new league.Team(teamName : params.teamName, 
+                         teamDescription : params.teamDescription,
+                         teamMembers : params.teamMembers, 
+			 league : League.get(params.leagueName))
+	if ( b.save() ) {
+          println("Saved OK");
+        }
+        else {
+          b.errors.each { error ->
+            println("Error: ${error}");
+          }
+        }
+        redirect action: 'index'
+       }
+
+    }
+}
