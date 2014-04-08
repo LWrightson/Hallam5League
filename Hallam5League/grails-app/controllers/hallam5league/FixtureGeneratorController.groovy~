@@ -6,8 +6,11 @@ class FixtureGeneratorController {
 
     def index() {
 	def result = [:]
-	result.r = Team.findAll("from league.Team as r where r.league.leagueName = 'the leg' ")
-
+	def fixture =[:]
+	Fixture.executeUpdate("delete fixture as t where t.league.leagueName = 'a'")
+	result.league=League.findByLeagueName("a")
+	result.r = Team.findAll("from league.Team as r where r.league.leagueName = 'a' ")
+	
 	result.fixtures = [:]
 
 result.r.each { teamA ->
@@ -25,7 +28,7 @@ result.r.each { teamA ->
 		
 		if(result.fixtures [fixtureName] == null){
 		//result.fixtures [fixtureName] = [:]
-		def newFixture = new Fixture(teamA:teamA,teamB:teamB,fixtureDate:new Date(), pitchNo:"1").save()
+		def newFixture = new Fixture(teamA:teamA,teamB:teamB,fixtureDate:new Date(), pitchNo:"1", league:result.league ).save()
 		result.fixtures [fixtureName] = [fixture:newFixture,name:fixtureName]
 		}
 		}
@@ -34,7 +37,7 @@ result.r.each { teamA ->
 }
 	println(result.fixtures)
 	render result as JSON
-	//return result
+	return result
 
 
  }

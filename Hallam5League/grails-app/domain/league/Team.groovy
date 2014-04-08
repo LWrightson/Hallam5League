@@ -8,6 +8,9 @@ class Team {
    //String leagueName
    League league
 
+   //static hasMany = [fixtures: Fixture]
+   //static mappedBy = [fixtures: "teamA"]
+
     static constraints = {
     }
 }

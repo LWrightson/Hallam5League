@@ -6,7 +6,10 @@ class Team {
    String teamDescription
    String teamMembers
    //String leagueName
-   League leagueName
+   League league
+
+   static hasMany = [fixtures: Fixture]
+   static mappedBy = [fixtures: "teamA"]
 
     static constraints = {
     }
