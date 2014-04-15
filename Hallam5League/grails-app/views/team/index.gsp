@@ -24,6 +24,8 @@
 			<thead>
 					<tr>
 					
+						<th><g:message code="team.league.label" default="League" /></th>
+					
 						<g:sortableColumn property="teamDescription" title="${message(code: 'team.teamDescription.label', default: 'Team Description')}" />
 					
 						<g:sortableColumn property="teamMembers" title="${message(code: 'team.teamMembers.label', default: 'Team Members')}" />
@@ -36,7 +38,9 @@
 				<g:each in="${teamInstanceList}" status="i" var="teamInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${teamInstance.id}">${fieldValue(bean: teamInstance, field: "teamDescription")}</g:link></td>
+						<td><g:link action="show" id="${teamInstance.id}">${fieldValue(bean: teamInstance, field: "league")}</g:link></td>
+					
+						<td>${fieldValue(bean: teamInstance, field: "teamDescription")}</td>
 					
 						<td>${fieldValue(bean: teamInstance, field: "teamMembers")}</td>
 					

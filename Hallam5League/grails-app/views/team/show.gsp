@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list team">
 			
+				<g:if test="${teamInstance?.league}">
+				<li class="fieldcontain">
+					<span id="league-label" class="property-label"><g:message code="team.league.label" default="League" /></span>
+					
+						<span class="property-value" aria-labelledby="league-label"><g:link controller="league" action="show" id="${teamInstance?.league?.id}">${teamInstance?.league?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${teamInstance?.teamDescription}">
 				<li class="fieldcontain">
 					<span id="teamDescription-label" class="property-label"><g:message code="team.teamDescription.label" default="Team Description" /></span>

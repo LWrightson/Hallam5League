@@ -10,6 +10,14 @@
 	<g:datePicker name="fixtureDate" precision="day"  value="${fixtureInstance?.fixtureDate}"  />
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: fixtureInstance, field: 'league', 'error')} required">
+	<label for="league">
+		<g:message code="fixture.league.label" default="League" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="league" name="league.id" from="${league.League.list()}" optionKey="id" required="" value="${fixtureInstance?.league?.id}" class="many-to-one"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: fixtureInstance, field: 'pitchNo', 'error')} ">
 	<label for="pitchNo">
 		<g:message code="fixture.pitchNo.label" default="Pitch No" />

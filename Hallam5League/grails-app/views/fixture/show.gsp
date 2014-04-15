@@ -32,6 +32,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${fixtureInstance?.league}">
+				<li class="fieldcontain">
+					<span id="league-label" class="property-label"><g:message code="fixture.league.label" default="League" /></span>
+					
+						<span class="property-value" aria-labelledby="league-label"><g:link controller="league" action="show" id="${fixtureInstance?.league?.id}">${fixtureInstance?.league?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${fixtureInstance?.pitchNo}">
 				<li class="fieldcontain">
 					<span id="pitchNo-label" class="property-label"><g:message code="fixture.pitchNo.label" default="Pitch No" /></span>

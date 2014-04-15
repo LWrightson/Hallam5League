@@ -28,14 +28,14 @@ class FixtureGeneratorController {
 	result.r = Team.findAll("from league.Team as r where r.league.id = '${f}' ")
 	//This will get all the teams which are playing in the selected league (by the ID that has been POSTed)
 	result.fixtures = [:]
-	//?????
+	//declares fixture value a map.
 	def count = 1
 	//Set the count variable at 1 on the first run of the page
 	def fixture_Date = System.currentTimeMillis()
 	//This will set a fixture_Date variable equal to the systems current time. We are going to use this to set the match times up
 	
 	result.r.each { teamA ->
-	//????
+	//forms a for each loop where below code will be executed for each team.
     		result.r.each { teamB ->
 			if(teamA.id == teamB.id){
 			//This will make sure No games can be played where the 2 teams are the same. Which would be impossible in the real world.

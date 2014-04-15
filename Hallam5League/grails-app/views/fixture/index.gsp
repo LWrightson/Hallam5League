@@ -26,6 +26,8 @@
 					
 						<g:sortableColumn property="fixtureDate" title="${message(code: 'fixture.fixtureDate.label', default: 'Fixture Date')}" />
 					
+						<th><g:message code="fixture.league.label" default="League" /></th>
+					
 						<g:sortableColumn property="pitchNo" title="${message(code: 'fixture.pitchNo.label', default: 'Pitch No')}" />
 					
 						<th><g:message code="fixture.teamA.label" default="Team A" /></th>
@@ -39,6 +41,8 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${fixtureInstance.id}">${fieldValue(bean: fixtureInstance, field: "fixtureDate")}</g:link></td>
+					
+						<td>${fieldValue(bean: fixtureInstance, field: "league")}</td>
 					
 						<td>${fieldValue(bean: fixtureInstance, field: "pitchNo")}</td>
 					

@@ -23,6 +23,17 @@
 			</g:if>
 			<ol class="property-list league">
 			
+				<g:if test="${leagueInstance?.fixtures}">
+				<li class="fieldcontain">
+					<span id="fixtures-label" class="property-label"><g:message code="league.fixtures.label" default="Fixtures" /></span>
+					
+						<g:each in="${leagueInstance.fixtures}" var="f">
+						<span class="property-value" aria-labelledby="fixtures-label"><g:link controller="fixture" action="show" id="${f.id}">${f?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${leagueInstance?.leagueName}">
 				<li class="fieldcontain">
 					<span id="leagueName-label" class="property-label"><g:message code="league.leagueName.label" default="League Name" /></span>
@@ -55,6 +66,17 @@
 					<span id="noOfTeams-label" class="property-label"><g:message code="league.noOfTeams.label" default="No Of Teams" /></span>
 					
 						<span class="property-value" aria-labelledby="noOfTeams-label"><g:fieldValue bean="${leagueInstance}" field="noOfTeams"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${leagueInstance?.teams}">
+				<li class="fieldcontain">
+					<span id="teams-label" class="property-label"><g:message code="league.teams.label" default="Teams" /></span>
+					
+						<g:each in="${leagueInstance.teams}" var="t">
+						<span class="property-value" aria-labelledby="teams-label"><g:link controller="team" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>

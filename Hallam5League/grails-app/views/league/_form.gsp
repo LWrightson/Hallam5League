@@ -2,6 +2,23 @@
 
 
 
+<div class="fieldcontain ${hasErrors(bean: leagueInstance, field: 'fixtures', 'error')} ">
+	<label for="fixtures">
+		<g:message code="league.fixtures.label" default="Fixtures" />
+		
+	</label>
+	
+<ul class="one-to-many">
+<g:each in="${leagueInstance?.fixtures?}" var="f">
+    <li><g:link controller="fixture" action="show" id="${f.id}">${f?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="fixture" action="create" params="['league.id': leagueInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'fixture.label', default: 'Fixture')])}</g:link>
+</li>
+</ul>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: leagueInstance, field: 'leagueName', 'error')} ">
 	<label for="leagueName">
 		<g:message code="league.leagueName.label" default="League Name" />
@@ -32,5 +49,22 @@
 		
 	</label>
 	<g:textField name="noOfTeams" value="${leagueInstance?.noOfTeams}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: leagueInstance, field: 'teams', 'error')} ">
+	<label for="teams">
+		<g:message code="league.teams.label" default="Teams" />
+		
+	</label>
+	
+<ul class="one-to-many">
+<g:each in="${leagueInstance?.teams?}" var="t">
+    <li><g:link controller="team" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="team" action="create" params="['league.id': leagueInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'team.label', default: 'Team')])}</g:link>
+</li>
+</ul>
+
 </div>
 
