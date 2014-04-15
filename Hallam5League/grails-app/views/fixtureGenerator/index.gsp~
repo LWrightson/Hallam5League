@@ -1,30 +1,23 @@
 <html>
 	<body>
-		<h1>Welcome to the Fixture page</h1>
-		
-		<table border="1" style="width:900px">
-			<tr>
+		<h1>Welcome to the Fixture Generator page</h1>
+	<g:form action="fixtureDisplay" method="POST">	
+	<g:select name="leagueName"
+          from="${league.League.list()}"
+          value="${leagueName}"
+          optionValue="leagueName"
+          optionKey="id" /><br>
+	<input type="submit"/>
+	</g:form>
 
-				<th>Home</th>
-				<th>Away</th>
 
-			</tr>
-			<g:each in="${r}" var="team">
-			<tr>
-				<td>${team.teamName?ID1}</td>
-				<td>${team.teamName?ID2}</td>
-			</tr>
-			<tr>
-				<td>${team.teamName?ID1}</td>
-				<td>${team.teamName?ID3}</td>
-			</tr>
-			<tr>
-				<td>${team.teamName?ID1}</td>
-				<td>${team.teamName?ID4}</td>
-			</tr>
-<!--etc-->
-			
-			</g:each>
-		</table>
+
+
+
+
+
+
+
+
 	</body>
 </html> 

@@ -1,7 +1,7 @@
 <html>
 	<body>
-	<h1>Welcome to the Fixture Generator page</h1>
-	<g:form action="fixtureGenerator" method="POST">	
+		<h1>Welcome to the Fixture page</h1>
+	<g:form action="fixtureSelector" method="POST">	
 	<g:select name="leagueName"
           from="${league.League.list()}"
           value="${leagueName}"

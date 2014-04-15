@@ -7,7 +7,8 @@ class League {
    String noOfTeams
    String lengthOfLeague
 
-   static hasMany = [teams: Team]
+   static hasMany = [teams: Team, fixtures: Fixture]
+   static mappedBy = [teams:'league',fixtures:'league']
 
    static constraints = {
    }
