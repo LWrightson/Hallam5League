@@ -44,7 +44,7 @@ class FixtureGeneratorController {
 				def fixtureName
 				//Creates a variable called fixtureName
 				if(teamA.teamName > teamB.teamName){
-					//This will order them by the alphabet. So all team games will be togther 
+					//This will order them by the alphabet in the database. So all team games will be together 
 					fixtureName = "${teamA.teamName} vs ${teamB.teamName}"
 				}
 				else{
@@ -52,25 +52,32 @@ class FixtureGeneratorController {
 				}
 
 		
-
+				//if the fixture name has not been declared which at this point they shouldnt have
 				if(result.fixtures [fixtureName] == null){
-					//result.fixtures [fixtureName] = [:]
+					result.fixtures [fixtureName] = [:]
 					def newFixture = new Fixture(teamA:teamA,
 					teamB:teamB,
+ 					//This will enter a new record into the database with the fixture date pitch number and team names.
 					fixtureDate: new Date(fixture_Date), 
 					pitchNo:"${count++}", 
+					//add one to the pitch count
 					league:result.league ).save()
+					// save into the database
 					result.fixtures [fixtureName] = [fixture:newFixture,name:fixtureName]
 					if (count > 4){
 						count = 1
-						fixture_Date += (7*24*60*60*1000) 
+						fixture_Date += (7*24*60*60*1000)
+						//In our league their are only going to be 4 pitches to play on. So this will count to 4 and after 
+						//that the games will have to be arranged for another date. It will assign the games for a week in the 
+						//future. 
 					}
 				}
 			}
 
 		}
 	}
-	redirect (uri:"../")
+	redirect (uri:"/")
+	//redirect to home page
 	return result
 	
 
