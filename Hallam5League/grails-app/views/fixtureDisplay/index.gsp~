@@ -1,7 +1,11 @@
 <html>
+  <head>
+	<meta name="layout" content="main"/>
+  </head>
 	<body>
 		<h1>Welcome to the Fixture page</h1>
-	<g:form action="fixtureSelector" method="POST">	
+	<a class="home" href="${createLink(uri: '/')}"> Home </a>
+	<g:form action="fixtureDisplay" method="POST">	
 	<g:select name="leagueName"
           from="${league.League.list()}"
           value="${leagueName}"

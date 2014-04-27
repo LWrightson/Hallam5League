@@ -1,6 +1,10 @@
 <html>
+ <head>
+	<meta name="layout" content="main"/>
+  </head>
 	<body>
-		<h1>Welcome to the Fixture page</h1>
+		<h2>Welcome to the Fixture page</h2>
+<a class="home" href="${createLink(uri: '/')}"> Home </a>
 		<table border="1" style="width:900px">
 			<tr>
 				
@@ -22,4 +26,4 @@
 
 	</body>
 </html>
-
+<!-- This view is generated from the controller which has been posted a league ID in the previous screen -->

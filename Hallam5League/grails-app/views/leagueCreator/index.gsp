@@ -1,7 +1,12 @@
 <html>
+	<head>
+		<meta name="layout" content="main"/>
+ 	</head>
+
 	<body>
-		<h1>Welcome to the League List page</h1>
+		<h2>Welcome to the League List page</h2>
 		<p><a href="create.gsp">Create League</a></p>
+                <a class="home" href="${createLink(uri: '/')}"> Home </a>
 		<table border="1" style="width:900px">
 			<tr>
 				<th>LeagueName</th>

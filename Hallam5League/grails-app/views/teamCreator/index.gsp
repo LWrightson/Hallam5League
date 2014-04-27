@@ -1,7 +1,12 @@
 <html>
+	<head>
+	<meta name="layout" content="main"/>
+  	</head>
 	<body>
-		<h1>Welcome to the Team List page</h1>
-		<p><g:link controller="teamCreator" action="create" >Create Team</g:link></p>
+		<h2>Welcome to the Team List page</h2>  
+		<a class="home" href="${createLink(uri: '/')}"> Home </a> <br><br>
+		<p><g:link controller="teamCreator" action="create" >Create Team</g:link></p> <br>
+              
 		<table border="1" style="width:900px">
 			<tr>
 				<th>Team Name</th>

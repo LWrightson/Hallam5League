@@ -1,6 +1,10 @@
 <html>
+  <head>
+	<meta name="layout" content="main"/>
+  </head>
 	<body>
-		<h1>Welcome to the Fixture page</h1>
+		<h2>Welcome to the Fixture page</h2>
+	<a class="home" href="${createLink(uri: '/')}"> Home </a>
 	<g:form action="fixtureDisplay" method="POST">	
 	<g:select name="leagueName"
           from="${league.League.list()}"

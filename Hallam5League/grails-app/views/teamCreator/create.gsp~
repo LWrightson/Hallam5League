@@ -6,7 +6,8 @@
 	<label>Team Name</label><input name="teamName" type="text"/><br>
 	<label>Team Description</label><input name="teamDescription" type="text"/><br>
         <label>Number of Team Members</label><input name="teamMembers" type="text"/><br>
-	<label>Select the League this team will play in</label><g:select name="leagueName"
+	<label>Select the League this team will play in</label>
+	<g:select name="leagueName"
           from="${league.League.list()}"
           value="${leagueName}"
           optionValue="leagueName"

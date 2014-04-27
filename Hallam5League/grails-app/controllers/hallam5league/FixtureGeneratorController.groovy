@@ -34,6 +34,8 @@ class FixtureGeneratorController {
 	def fixture_Date = System.currentTimeMillis()
 	//This will set a fixture_Date variable equal to the systems current time. We are going to use this to set the match times up
 	
+        println("Processing ${result.r.size()} teams");
+
 	result.r.each { teamA ->
 	//forms a for each loop where below code will be executed for each team.
     		result.r.each { teamB ->
